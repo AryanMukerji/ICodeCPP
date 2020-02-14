@@ -4,11 +4,9 @@ using namespace std;
 class demo
 {
     int a,b;
-    
- 
+	
     public:
  
-    
     demo()              // Default Constructor
     {
         a=0;
