@@ -4,10 +4,10 @@ using namespace std;
 int main()
 {
     int x=0,y=0,z=0;
-    cout<<" "<<"x"<<" "<<"y"<<" "<<"z"<<" "<<"x&&y||z"<<endl;
+    cout<<" "<<"X"<<" "<<"Y"<<" "<<"Z"<<" "<<"XY+Z"<<endl;
     for(int i=0;i<8;i++)
     {
-        cout<<" "<<x<<" "<<y<<" "<<z<<"   "<<(x&&y||z)<<endl;
+        cout<<" "<<x<<" "<<y<<" "<<z<<"  "<<(x&&y||z)<<endl;
         if(i==0){x=0;y=0;z=1;}
         else if(i==1){x=0;y=1;z=0;}
         else if(i==2){x=0;y=1;z=1;}
