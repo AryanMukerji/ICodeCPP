@@ -41,7 +41,14 @@ class demo
     {
         cout<<"\n D ";   
     }
+	
+	friend void test(demo); // Friend Function Prototype
 };
+
+void test(demo ob) // Friend Function Declaration
+{
+   cout<<"a = "<<ob.a; 
+}
 
 int main()
 {
@@ -51,5 +58,7 @@ int main()
     demo d5(d3);         // CC
     demo d6=d4;          // CC
     d2=d1.sum(d3,d4);    // Demo Sum
+	demo d6;             // DC
+    test(d6);            // Function Calling
     return 0;
 }
