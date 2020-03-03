@@ -47,7 +47,7 @@ class demo
 
 void test(demo ob) // Friend Function Declaration
 {
-   cout<<"a = "<<ob.a; 
+   cout<<"\n a = "<<ob.a; 
 }
 
 int main()
@@ -58,7 +58,7 @@ int main()
     demo d5(d3);         // CC
     demo d6=d4;          // CC
     d2=d1.sum(d3,d4);    // Demo Sum
-	demo d6;             // DC
-    test(d6);            // Function Calling
+	demo d7;             // DC
+    test(d7);            // Function Calling
     return 0;
 }
