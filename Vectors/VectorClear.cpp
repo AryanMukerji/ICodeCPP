@@ -27,7 +27,11 @@ int main()
 /*
 
 vector::clear() - clear() function is used to remove all the elements 
-of the vector container, thus making it size 0.
+                  of the vector container, thus making it size 0.
+				  
+				- clear() removes all the elements from a vector 
+				  container, thus making its size 0. All the elements 
+				  of the vector are removed using clear() function.  
 
 Syntax: vectorname.clear()
 
