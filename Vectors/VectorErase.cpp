@@ -81,6 +81,11 @@ int main()
 
 vector::erase() - erase() function is used to remove elements from a container 
                   from the specified position or range.
+				  
+                - erase() function on the other hand, is used to remove specific 
+				  elements from the container or a range of elements from the 
+				  container, thus reducing its size by the number of elements 
+				  removed.				  
 
 Syntax: (1) vectorname.erase(position)
         (2) vectorname.erase(startingposition, endingposition)
