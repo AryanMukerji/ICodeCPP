@@ -56,6 +56,15 @@ vector::pop_back() - pop_back() function is used to pop or remove elements from
 a vector from the back. The value is removed from the vector from the end, and 
 the container size is decreased by 1.
 
+Q => Does pop_back() removes values along with elements ?
+
+A => When pop_back() function is called, element at the last is removed, values and 
+    elements are one of the same thing in this case. The destructor of the stored 
+    object is called, and length of the vector is removed by 1. If the container’s 
+    capacity is not reduced, then you can still access the previous memory location 
+    but in this case, there is no use of accessing an already popped element, as 
+    it will result in an undefined behavior.
+
 Syntax: vectorname.pop_back()
 
 Parameters: No parameters are passed.
