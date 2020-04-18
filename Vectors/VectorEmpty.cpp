@@ -67,6 +67,18 @@ Input  : myvector = {}
          myvector.empty();
 Output : True
 
+Q => Why is empty() preferred over size() ?
+
+A => empty() function is often said to be preferred over the size() 
+     function due to some of these points :-
+	 
+     1. empty() function does not use any comparison operators, thus it is more 
+	    convenient to use.
+	 
+     2. empty() function is implemented in constant time, regardless of container 
+	    type, whereas some implementations of size() function require O(n) time 
+	    complexity such as list::size().
+
 Source : GeekforGeeks (https://www.geeksforgeeks.org/vectorempty-vectorsize-c-stl/)
 
 */
