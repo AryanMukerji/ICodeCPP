@@ -1,5 +1,6 @@
 #include <iostream> 
 #include <vector> 
+
 using namespace std;
 
 // resizing of the vector (Size of the vector container is lowered.)
