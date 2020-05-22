@@ -2,6 +2,8 @@
 #include <vector> 
 using namespace std;
 
+// resizing of the vector (Size of the vector container is lowered.)
+
 void SizeLower() 
 { 
     vector<int> vec;
@@ -29,6 +31,8 @@ void SizeLower()
         cout << " " << vec[i] << " ";	 
 }
 
+// resizing of the vector (Size of the vector container is increased.)
+
 void SizeIncreased() 
 { 
     vector<int> vec;
@@ -55,6 +59,14 @@ void SizeIncreased()
 	for (int i = 0; i < vec.size(); i++) 
         cout << " " << vec[i] << " ";
 }
+
+/* 
+
+resizing of the vector 
+(Size of the vector container is increased and 
+new elements are initialized with specified value.)
+
+*/
 
 void SpecifiedIncreace() 
 { 
