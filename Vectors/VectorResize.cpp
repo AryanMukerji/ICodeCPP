@@ -75,4 +75,10 @@ void SpecifiedIncreace()
     cout << endl;
 
 	vec.resize(12, 9);
+	
+	cout << " Contents of vector after resizing : " 
+         << endl;
+	
+	for (int i = 0; i < vec.size(); i++) 
+        cout << " " << vec[i] << " ";
 }		 
