@@ -19,4 +19,12 @@ void SizeLower()
         cout << " " << vec[i] << " "; 
   
     cout << endl;
+	
+	vec.resize(4); 
+  
+    cout << " Contents of vector after resizing : " 
+         << endl;
+		 
+	for (int i = 0; i < vec.size(); i++) 
+        cout << " " << vec[i] << " ";	 
 }	
