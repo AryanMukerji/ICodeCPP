@@ -90,4 +90,20 @@ int main()
     SpecifiedIncreace();
     
     return 0;
-}		 
+}
+
+/*
+
+vector::resize() - The function alters the container’s content in actual by inserting 
+                   or deleting the elements from it. 
+				   
+>> It happens so,
+
+=> If the given value of n is less than the size at present then extra elements are 
+   demolished. 
+=> If n is more than current size of container then upcoming elements are 
+   appended at the end of the vector.
+   
+Syntax: vectorname.resize(int n, int val)
+
+*/		 
