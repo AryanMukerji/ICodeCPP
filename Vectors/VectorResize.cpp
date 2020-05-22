@@ -45,5 +45,13 @@ void SizeIncreased()
 	 for (int i = 0; i < vec.size(); i++) 
         cout << " " << vec[i] << " "; 
   
-    cout << endl;	 
+    cout << endl;
+	
+	vec.resize(8);
+
+	cout << " Contents of vector after resizing : " 
+         << endl;
+	
+	for (int i = 0; i < vec.size(); i++) 
+        cout << " " << vec[i] << " ";
 }		 	 
