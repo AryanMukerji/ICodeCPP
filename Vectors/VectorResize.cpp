@@ -106,4 +106,13 @@ vector::resize() - The function alters the container’s content in actual by in
    
 Syntax: vectorname.resize(int n, int val)
 
+Parameters:-
+
+ n – it is new container size, expressed in number of elements.
+val – if this parameter is specified then new elements are initialized with this value.
+
+Return value: This function do not returns anything.
+
+Source: GeeksforGeeks (https://www.geeksforgeeks.org/vector-resize-c-stl/)
+
 */		 
