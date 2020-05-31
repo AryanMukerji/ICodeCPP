@@ -31,6 +31,39 @@ class PriorityQueue // Class Priority Queue
         void Display(); // Print Priority Queue
 };
 
+void PriorityQueue::Insert()
+{
+    Node *tmp, *q;
+    int Item, Priority;
+   
+    cout<<"\n Input the item value to be added in the queue : ";
+    cin>>Item;
+    cout<<"\n Enter its priority : ";
+    cin>>Priority;
+   
+    tmp = new Node;
+    tmp->Info = Item;
+    tmp->Priority = Priority;
+   
+    if(Front == NULL || Priority < Front->Priority)
+    {
+        tmp->Link = Front;
+        Front = tmp;
+    }
+    else
+    {
+        q = Front;
+        
+        while(q->Link != NULL && q->Link->Priority <= Priority)
+        {
+            q = q->Link;
+        }
+        
+        tmp->Link = q->Link;
+        q->Link = tmp;
+    }
+}
+
 int main()
 {
     int a;
