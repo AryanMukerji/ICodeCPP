@@ -64,6 +64,24 @@ void PriorityQueue::Insert()
     }
 }
 
+void PriorityQueue::Delete()
+{
+    Node *tmp;
+    
+    if(Front == NULL)
+    {
+        cout<<"\n Queue Underflow !! \n";
+    }
+    else
+    {
+        tmp = Front;
+        cout<<"\n Current Highest Priority : "<<tmp->Priority;
+        cout<<"\n Deleted Item Is : "<<tmp->Info;
+        Front = Front->Link;
+        free(tmp);
+    }
+}
+
 int main()
 {
     int a;
