@@ -82,6 +82,27 @@ void PriorityQueue::Delete()
     }
 }
 
+void PriorityQueue::Display()
+{
+    Node *ptr;
+    ptr = Front;
+    
+    if (Front == NULL)
+    {
+        cout<<"\n Queue Is Empty !!! \n";
+    }
+    else
+    {
+        cout<<"\n Queue Is :- ";
+        cout<<"\n Priority        Item ";
+        while(ptr != NULL)
+        {
+            cout<<"\n "<<ptr->Priority<<"               "<<ptr->Info;
+            ptr = ptr->Link;
+        }
+    }
+}
+
 int main()
 {
     int a;
