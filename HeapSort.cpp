@@ -25,3 +25,17 @@ void Heapify(int arr[], int n, int i)
     }
 }
 
+void HeapSort(int arr[], int n)
+{
+    for(int i = n / 2 - 1; i >= 0; i--) // build heap (rearrange array)
+    {
+        Heapify(arr, n, i);
+    }
+ 
+    for(int i=n-1; i>=0; i--) // one by one extract an element from heap
+    {
+        swap(arr[0], arr[i]); // move current root to end
+ 
+        Heapify(arr, i, 0); // call max heapify on the reduced heap
+    }
+}
