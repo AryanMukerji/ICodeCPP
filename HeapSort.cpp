@@ -39,3 +39,13 @@ void HeapSort(int arr[], int n)
         Heapify(arr, i, 0); // call max heapify on the reduced heap
     }
 }
+
+void PrintArray(int arr[], int n)
+{
+    for(int i=0; i<n; i++)
+    {
+        cout<<arr[i]<<" -> ";
+    }
+    cout<<"!!! \n";
+}
+
