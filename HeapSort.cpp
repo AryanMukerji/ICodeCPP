@@ -49,3 +49,21 @@ void PrintArray(int arr[], int n)
     cout<<"!!! \n";
 }
 
+int main()
+{
+    int arr[1000], n;
+    
+    cout<<"\n Enter Number Of Elements : ";
+    cin>>n;
+    
+    cout<<"\n Enter Your "<<n<<" Elements :- \n";
+    for(int i=0; i<n; i++)
+    {
+        cout<<"\n Element "<<i + 1<<" : ";cin>>arr[i];
+    }    
+ 
+    HeapSort(arr, n);
+ 
+    cout<<"\n Sorted Elements Are : ";
+    PrintArray(arr, n);
+}
