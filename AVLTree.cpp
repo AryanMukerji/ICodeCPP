@@ -15,3 +15,13 @@ int max(int a, int b)
 {
     return (a > b) ? a : b;
 }
+
+int height(Node *N) // Calculate height
+{
+    if(N == NULL)
+    {
+        return 0;
+    }
+    
+    return N->height;
+}
