@@ -10,3 +10,8 @@ class Node
     Node *right;
     int height;
 };
+
+int max(int a, int b) 
+{
+    return (a > b) ? a : b;
+}
