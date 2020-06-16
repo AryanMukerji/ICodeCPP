@@ -25,3 +25,17 @@ int height(Node *N) // Calculate height
     
     return N->height;
 }
+
+Node *newNode(int key) // New node creation
+{
+    Node *node = new Node();
+    
+    node->key = key;
+    node->left = NULL;
+    node->right = NULL;
+    node->height = 1;
+    
+    return (node);
+}
+
+
