@@ -66,4 +66,11 @@ Node *leftRotate(Node *x) // Rotate left
     return y;
 }
 
-
+int getBalanceFactor(Node *N) // Get the balance factor of each node
+{
+    if (N == NULL)
+    {
+        return 0;
+    }    
+    return height(N->left) - height(N->right);
+}
