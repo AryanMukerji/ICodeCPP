@@ -74,3 +74,61 @@ int getBalanceFactor(Node *N) // Get the balance factor of each node
     }    
     return height(N->left) - height(N->right);
 }
+
+Node *insertNode(Node *node, int key) // Insert a node
+{
+    // Find the correct postion and insert the node
+    if (node == NULL)
+    {
+        return (newNode(key));
+    } 
+    
+    
+    if (key < node->key)
+    {
+        node->left = insertNode(node->left, key);
+    }
+    else if (key > node->key)
+    {
+        node->right = insertNode(node->right, key);
+    }
+    else
+    {
+        return node;
+    }
+
+    // Update the balance factor of each node and balance the tree
+    node->height = 1 + max( height(node->left), height(node->right) );
+    
+    int balanceFactor = getBalanceFactor(node);
+    
+    if (balanceFactor > 1) 
+    {
+        if (key < node->left->key) 
+        {
+            return rightRotate(node);
+        } 
+        else if (key > node->left->key) 
+        {
+            node->left = leftRotate(node->left);
+            return rightRotate(node);
+        }
+    }
+    
+    if (balanceFactor < -1) 
+    {
+        if (key > node->right->key) 
+        {
+            return leftRotate(node);
+        } 
+        else if (key < node->right->key) 
+        {
+            node->left = rightRotate(node->left);
+            return leftRotate(node);
+        }
+    }
+    
+    return node;
+}
+
+
