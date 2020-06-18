@@ -131,4 +131,14 @@ Node *insertNode(Node *node, int key) // Insert a node
     return node;
 }
 
-
+Node *nodeWithMimumValue(Node *node) // Node with minimum value
+{
+    Node *current = node;
+    
+    while (current->left != NULL)
+    {        
+        current = current->left;
+    }    
+        
+    return current;
+}
