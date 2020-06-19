@@ -224,4 +224,28 @@ Node *deleteNode(Node *root, int key) // Delete a node
     return root;
 }
 
+void printTree(Node *root, string indent, bool last) // Print the tree
+{
+    if (root != nullptr) 
+    {
+        cout << indent;
+        
+        if (last) 
+        {
+            cout << "R----";
+            indent += "   ";
+        } 
+        else 
+        {
+            cout << "L----";
+            indent += "|  ";
+        }
+        
+        cout << root->key << endl;
+        
+        printTree(root->left, indent, false);
+        printTree(root->right, indent, true);
+    }
+}
+
 
