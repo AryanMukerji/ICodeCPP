@@ -248,4 +248,18 @@ void printTree(Node *root, string indent, bool last) // Print the tree
     }
 }
 
-
+int main() 
+{
+    Node *root = NULL;
+    int a,num;
+    
+    while(1)
+    {   
+        cout<<"\n Select An Option : \n 1. Insert \n 2. Delete \n 3. Display \n 4. Exit \n Your Choice : ";
+        cin>>a;
+        
+        
+    }
+  
+  return 0;
+}
