@@ -258,8 +258,67 @@ int main()
         cout<<"\n Select An Option : \n 1. Insert \n 2. Delete \n 3. Display \n 4. Exit \n Your Choice : ";
         cin>>a;
         
+        switch(a)
+        {
+            case 1: {
+                        cout<<"\n Enter an Element to Insert : ";
+                        cin>>num;
+                        
+                        root = insertNode(root, num);
+                        
+                        if (root == NULL)
+                        {
+                            cout<<"\n Node Insertion Failed !! \n";
+                        }
+                        else
+                        {
+                            cout<<"\n Node Inserted Successfully !! \n";
+                        }
+                    }
+            break;
         
+            case 2: {
+                        if(root == NULL)
+                        {
+                            cout<<"\n The Tree Is Empty !! \n";
+                        }
+                        else
+                        {
+                            cout<<"\n Enter an Element to Delete : ";
+                            cin>>num;
+                        
+                            root = deleteNode(root, num);
+                        
+                            if(root == NULL)
+                            {
+                                cout<<"\n Node Deleted Successfully !! \n";
+                            }
+                            else
+                            {
+                                cout<<"\n Element Does Not Exists !! \n";
+                            }
+                        }
+                    }
+            break;
+        
+            case 3: {
+                        if (root == NULL)
+                        {
+                            cout<<"\n The Tree Is Empty !! \n";
+                        }
+                        else
+                        {
+                            printTree(root, "", true);
+                        }
+                    }
+            break;
+            
+            case 4: exit(0);
+            break;
+        
+            default : cout<<"\n Option Not Available !! \n";
+        }
     }
   
-  return 0;
+    return 0;
 }
