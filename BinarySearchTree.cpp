@@ -30,3 +30,24 @@ class BST
     void Postorder(node *);
     void Display(node *, int);
 };
+
+node * BST::Find(node *no, int data) // Find Element in the Tree For The User
+{
+    if(no == NULL)
+    {
+        return (NULL);
+    }
+    
+    if(data > no->info)
+    {
+        return Find(no->right, data);
+    }
+    else if(data < no->info)
+    {
+        return Find(no->left, data);
+    }
+    else
+    {
+        return no;
+    }
+}
