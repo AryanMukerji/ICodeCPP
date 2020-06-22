@@ -51,3 +51,60 @@ node * BST::Find(node *no, int data) // Find Element in the Tree For The User
         return no;
     }
 }
+
+void BST::Search(int item, node **par, node **loc) // Find Element in the Tree For The Program
+{
+    node *ptr, *ptrsave;
+    
+    if (root == NULL)
+    {
+        *loc = NULL;
+        *par = NULL;
+        
+        return;
+    }
+    
+    if (item == root->info)
+    {
+        *loc = root;
+        *par = NULL;
+        
+        return;
+    }
+    
+    if (item < root->info)
+    {
+        ptr = root->left;
+    }    
+    else
+    {
+        ptr = root->right;
+    }
+    
+    ptrsave = root;
+    
+    while (ptr != NULL)
+    {
+        if (item == ptr->info)
+        {
+            *loc = ptr;
+            *par = ptrsave;
+            
+            return;
+        }
+        
+        ptrsave = ptr;
+        
+        if (item < ptr->info)
+        {
+            ptr = ptr->left;
+        }
+	    else
+	    {
+	        ptr = ptr->right;
+	    }
+    }
+    
+    *loc = NULL;
+    *par = ptrsave;
+}
