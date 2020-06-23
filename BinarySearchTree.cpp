@@ -108,3 +108,56 @@ void BST::Search(int item, node **par, node **loc) // Find Element in the Tree F
     *loc = NULL;
     *par = ptrsave;
 }
+
+void BST::Insert(node *tree, node *newnode) // Inserting Element into the Tree
+{
+    if (root == NULL)
+    {
+        root = new node;
+        root->info = newnode->info;
+        root->left = NULL;
+        root->right = NULL;
+        
+        cout<<"\n Root Node is Added !! \n";
+        return;
+    }
+    
+    if (tree->info == newnode->info)
+    {
+        cout<<"\n Element already in the tree !! \n";
+        return;
+    }
+    
+    if (tree->info > newnode->info)
+    {
+        if (tree->left != NULL)
+        {
+            Insert(tree->left, newnode);	
+	    }
+	    else
+	    {
+            tree->left = newnode;
+            (tree->left)->left = NULL;
+            (tree->left)->right = NULL;
+            
+            cout<<"\n Node Added To Left !! \n";
+            return;
+        }
+    }
+    else
+    {
+        if (tree->right != NULL)
+        {
+            Insert(tree->right, newnode);
+        }
+        else
+        {
+            tree->right = newnode;
+            (tree->right)->left = NULL;
+            (tree->right)->right = NULL;
+            
+            cout<<"\n Node Added To Right !! \n";
+            return;
+        }	
+    }
+}
