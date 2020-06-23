@@ -161,3 +161,44 @@ void BST::Insert(node *tree, node *newnode) // Inserting Element into the Tree
         }	
     }
 }
+
+void BST::Delete(int item) // Delete Element from the tree
+{
+    node *parent, *location;
+    
+    if (root == NULL)
+    {
+        cout<<"\n Tree is Empty !! \n"<<endl;
+        return;
+    }
+    
+    Search(item, &parent, &location);
+    
+    if (location == NULL)
+    {
+        cout<<"\n Item not present in tree !! \n"<<endl;
+        return;
+    }
+    
+    if (location->left == NULL && location->right == NULL)
+    {
+        CaseA(parent, location);
+    }
+    
+    if (location->left != NULL && location->right == NULL)
+    {
+        CaseB(parent, location);
+    }
+    
+    if (location->left == NULL && location->right != NULL)
+    {
+        CaseB(parent, location);
+    }
+    
+    if (location->left != NULL && location->right != NULL)
+    {
+        CaseC(parent, location);
+    }
+    
+    free(location);
+}
