@@ -221,3 +221,33 @@ void BST::CaseA(node *par, node *loc ) // Case A
         }
     }
 }
+
+void BST::CaseB(node *par, node *loc) // Case B
+{
+    node *child;
+    
+    if (loc->left != NULL)
+    {
+        child = loc->left;
+    }
+    else
+    {
+        child = loc->right;
+    }
+    
+    if (par == NULL)
+    {
+        root = child;
+    }
+    else
+    {
+        if (loc == par->left)
+        {
+            par->left = child;
+        }
+        else
+        {
+            par->right = child;
+        }
+    }
+}
