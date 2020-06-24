@@ -202,3 +202,22 @@ void BST::Delete(int item) // Delete Element from the tree
     
     free(location);
 }
+
+void BST::CaseA(node *par, node *loc ) // Case A
+{
+    if (par == NULL)
+    {
+        root = NULL;
+    }
+    else
+    {
+        if (loc == par->left)
+        {
+            par->left = NULL;
+        }
+        else
+        {
+            par->right = NULL;
+        }
+    }
+}
