@@ -251,3 +251,48 @@ void BST::CaseB(node *par, node *loc) // Case B
         }
     }
 }
+
+void BST::CaseC(node *par, node *loc) // Case C
+{
+    node *ptr, *ptrsave, *suc, *parsuc;
+    
+    ptrsave = loc;
+    ptr = loc->right;
+    
+    while (ptr->left != NULL)
+    {
+        ptrsave = ptr;
+        ptr = ptr->left;
+    }
+    
+    suc = ptr;
+    parsuc = ptrsave;
+    
+    if (suc->left == NULL && suc->right == NULL)
+    {
+        CaseA(parsuc, suc);
+    }
+    else
+    {
+        CaseB(parsuc, suc);
+    }
+    
+    if (par == NULL)
+    {
+        root = suc;
+    }
+    else
+    {
+        if (loc == par->left)
+        {
+            par->left = suc;
+        }
+        else
+        {
+            par->right = suc;
+        }
+    }
+    
+    suc->left = loc->left;
+    suc->right = loc->right;
+}
