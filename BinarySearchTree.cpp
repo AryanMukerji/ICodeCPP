@@ -296,3 +296,20 @@ void BST::CaseC(node *par, node *loc) // Case C
     suc->left = loc->left;
     suc->right = loc->right;
 }
+
+void BST::Preorder(node *ptr) // Pre Order Traversal
+{
+    if (root == NULL)
+    {
+        cout<<"\n Tree is Empty !! \n"<<endl;
+        return;
+    }
+    
+    if (ptr != NULL)
+    {
+        cout<<ptr->info<<"  ";
+        
+        Preorder(ptr->left);
+        Preorder(ptr->right);
+    }
+}
