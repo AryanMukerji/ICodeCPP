@@ -331,3 +331,19 @@ void BST::Inorder(node *ptr) // In Order Traversal
         Inorder(ptr->right);
     }
 }
+
+void BST::Postorder(node *ptr) // Postorder Traversal
+{
+    if (root == NULL)
+    {
+        cout<<"\n Tree is Empty !! \n"<<endl;
+        return;
+    }
+    if (ptr != NULL)
+    {
+        Postorder(ptr->left);
+        Postorder(ptr->right);
+        
+        cout<<ptr->info<<"  ";
+    }
+}
