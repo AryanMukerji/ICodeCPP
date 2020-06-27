@@ -371,3 +371,14 @@ void BST::Display(node *ptr, int level) // Display Tree Structure
         Display(ptr->left, level+1);
     }
 }
+
+int main()
+{
+    int choice, num, ch;
+    BST bst;
+    node *temp;
+    
+    //
+    
+    return 0;
+}
