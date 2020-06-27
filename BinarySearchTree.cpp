@@ -347,3 +347,27 @@ void BST::Postorder(node *ptr) // Postorder Traversal
         cout<<ptr->info<<"  ";
     }
 }
+
+void BST::Display(node *ptr, int level) // Display Tree Structure
+{
+    int i;
+    
+    if (ptr != NULL)
+    {
+        Display(ptr->right, level+1);
+        cout<<endl;
+        
+        if (ptr == root)
+        {
+            cout<<" Root->  ";
+        }
+        else
+        {
+            for (i = 0;i < level;i++)
+                cout<<"       ";
+	    }
+	    
+        cout<<ptr->info;
+        Display(ptr->left, level+1);
+    }
+}
