@@ -378,7 +378,89 @@ int main()
     BST bst;
     node *temp;
     
-    //
+    while (1)
+    {
+        cout<<"\n\n Select An Option : \n 1. Insert \n 2. Delete \n 3. Display \n 4. Search \n 5. Preorder Traversal "
+            <<"\n 6. Inorder Traversal \n 7. Postorder Traversal \n 8. Exit \n Your Choice : ";
+        cin>>choice;
+        
+        switch(choice)
+        {
+        case 1: {
+                    temp = new node;
+                    
+                    cout<<"\n Enter the number to be inserted : ";
+	                cin>>temp->info;
+	                
+                    bst.Insert(root, temp);
+                }
+        break; 
+        
+        case 2: {
+                    if (root == NULL)
+                    {
+                        cout<<"\n Tree is Empty !! Nothing to Delete !! \n"<<endl;
+                        continue;
+                    }
+                    
+                    cout<<"\n Enter the number to be deleted : ";
+                    cin>>num;
+                    
+                    bst.Delete(num);
+                }    
+        break;
+        
+        case 3: {
+                    cout<<"\n Display BST : \n";
+                    bst.Display(root, 1);
+                    cout<<endl;
+                }
+        break;
+        
+        case 4: {
+                    cout<<"\n Enter element to be searched : ";
+                    cin>>ch;
+                    
+                    temp = bst.Find(root, ch);
+                    
+                    if(temp == NULL)
+                    {
+                        cout<<"\n Element is not found !!!";
+                    }
+                    else
+                    {
+                        cout<<"\n Element "<<temp->info<<" is Found ";
+                    }
+                }
+        break;
+        
+        case 5: {
+                    cout<<"\n Preorder Traversal of BST : \n";
+                    bst.Preorder(root);
+                    cout<<endl;
+                }
+        break;
+        
+        case 6: {
+                    cout<<"\n Inorder Traversal of BST : \n";
+                    bst.Inorder(root);
+                    cout<<endl;
+                }
+        break;
+        
+        case 7: {
+                    cout<<"\n Postorder Traversal of BST : \n";
+                    bst.Postorder(root);
+                    cout<<endl;
+                }
+        break;
+        
+        case 8: exit(0);
+        break;
+        
+        default: cout<<"\n Option Not Available !! \n";
+        }
+    }
     
     return 0;
 }
