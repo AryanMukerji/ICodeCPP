@@ -5,7 +5,7 @@ using namespace std;
 
 int main()
 {
-    int H = 0, M = 0, S = 0;
+    int H = 0, M = 0, S = 0; // H = Hours, M = Minutes, S = Seconds
     
     while (true)
     {
