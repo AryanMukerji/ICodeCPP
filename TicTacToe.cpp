@@ -1,6 +1,7 @@
 #include <iostream>
 #include <unistd.h>
 #include <cstdlib>
+#include <limits>
 using namespace std;
 
 // Checking the matrix after each user input to determine the progression of the game
@@ -121,9 +122,11 @@ int TicTacToe(char p1, char p2)
         a1 = 0;
         cout << "\n\n\n Enter Player 1 : " << p1 << " : "; cin >> a1; 
         
-        if (!(1 <= a1 <= 9))
+        if (!(1 <= a1 && a1 <= 9))
         {
             cout << "\n Invalid Input! ";
+            cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
             goto PLAYER1;
         }
         
@@ -163,9 +166,11 @@ int TicTacToe(char p1, char p2)
         a2 = 0;
         cout << "\n\n\n Enter Player 2 : " << p2 << " : "; cin >> a2;
         
-        if (!(1 <= a2 <= 9))
+        if (!(1 <= a2 && a2 <= 9))
         {
             cout << "\n Invalid Input! ";
+            cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
             goto PLAYER2;
         }
         
