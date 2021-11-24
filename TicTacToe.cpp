@@ -1,8 +1,41 @@
 #include <iostream>
 #include <unistd.h>
 #include <cstdlib>
-#include <limits>
 using namespace std;
+
+void ClearOS()
+{
+    // https://iq.opengenus.org/detect-operating-system-in-c/
+    
+	#ifdef _WIN32
+		// cout << "\n You have Windows Operating System";
+		system("cls");
+	#endif
+	
+	#ifdef __linux__
+		// cout << "\n You have Linux Operating System";
+		system("clear");
+	#endif
+	
+	#ifdef __unix__
+		// cout << "\n You have Unix Operating System";
+		system("clear");
+	#endif
+}
+
+void DisplayMatrix(char arr1[])
+{
+	cout << "\n\t\t  _____ _____ _____  "
+         << "\n\t\t |     |     |     | "
+         << "\n\t\t |  " << arr1[0] << "  |  " << arr1[1] << "  |  " << arr1[2] << "  | "
+         << "\n\t\t |____1|____2|____3| "
+         << "\n\t\t |     |     |     | "
+         << "\n\t\t |  " << arr1[3] << "  |  " << arr1[4] << "  |  " << arr1[5] << "  | "
+         << "\n\t\t |____4|____5|____6| "
+         << "\n\t\t |     |     |     | "
+         << "\n\t\t |  " << arr1[6] << "  |  " << arr1[7] << "  |  " << arr1[8] << "  | "
+         << "\n\t\t |____7|____8|____9| ";
+}
 
 // Checking the matrix after each user input to determine the progression of the game
 int ProgressCheck(char arr[]) 
@@ -104,16 +137,7 @@ int TicTacToe(char p1, char p2)
     
     int a1, a2, flag = 0; // a1 and a2 stores the box number (displayed on screen) selected by user
     
-    cout << "\n\t\t  _____ _____ _____  "
-         << "\n\t\t |     |     |     | "
-         << "\n\t\t |  " << arr1[0] << "  |  " << arr1[1] << "  |  " << arr1[2] << "  | "
-         << "\n\t\t |____1|____2|____3| "
-         << "\n\t\t |     |     |     | "
-         << "\n\t\t |  " << arr1[3] << "  |  " << arr1[4] << "  |  " << arr1[5] << "  | "
-         << "\n\t\t |____4|____5|____6| "
-         << "\n\t\t |     |     |     | "
-         << "\n\t\t |  " << arr1[6] << "  |  " << arr1[7] << "  |  " << arr1[8] << "  | "
-         << "\n\t\t |____7|____8|____9| ";
+	DisplayMatrix(arr1); 
     
     while(true)
     {
@@ -122,11 +146,9 @@ int TicTacToe(char p1, char p2)
         a1 = 0;
         cout << "\n\n\n Enter Player 1 : " << p1 << " : "; cin >> a1; 
         
-        if (!(1 <= a1 && a1 <= 9))
+        if (!(1 <= a1 <= 9))
         {
             cout << "\n Invalid Input! ";
-            cin.clear();
-            cin.ignore(numeric_limits<streamsize>::max(), '\n');
             goto PLAYER1;
         }
         
@@ -140,18 +162,10 @@ int TicTacToe(char p1, char p2)
 	    // Assigning 'X' or 'O' at a1-1 postion in matrix
 	    arr1[a1-1] = p1; 
         
-	    system("clear");
+	    // system("clear");
+		ClearOS();
         
-        cout << "\n\t\t  _____ _____ _____  "
-             << "\n\t\t |     |     |     | "
-             << "\n\t\t |  " << arr1[0] << "  |  " << arr1[1] << "  |  " << arr1[2] << "  | "
-             << "\n\t\t |____1|____2|____3| "
-             << "\n\t\t |     |     |     | "
-             << "\n\t\t |  " << arr1[3] << "  |  " << arr1[4] << "  |  " << arr1[5] << "  | "
-             << "\n\t\t |____4|____5|____6| "
-             << "\n\t\t |     |     |     | "
-             << "\n\t\t |  " << arr1[6] << "  |  " << arr1[7] << "  |  " << arr1[8] << "  | "
-             << "\n\t\t |____7|____8|____9| ";
+		DisplayMatrix(arr1); 
         
         // calling CheckWinner() to check the progress of the game
         flag = CheckWinner(ProgressCheck(arr1), 1); // 1 reperesents Player 1
@@ -166,11 +180,9 @@ int TicTacToe(char p1, char p2)
         a2 = 0;
         cout << "\n\n\n Enter Player 2 : " << p2 << " : "; cin >> a2;
         
-        if (!(1 <= a2 && a2 <= 9))
+        if (!(1 <= a2 <= 9))
         {
             cout << "\n Invalid Input! ";
-            cin.clear();
-            cin.ignore(numeric_limits<streamsize>::max(), '\n');
             goto PLAYER2;
         }
         
@@ -182,18 +194,10 @@ int TicTacToe(char p1, char p2)
 	
 	    arr1[a2-1] = p2;
         
-	    system("clear");
+	    // system("clear");
+		ClearOS();
 	    
-	    cout << "\n\t\t  _____ _____ _____  "
-             << "\n\t\t |     |     |     | "
-             << "\n\t\t |  " << arr1[0] << "  |  " << arr1[1] << "  |  " << arr1[2] << "  | "
-             << "\n\t\t |____1|____2|____3| "
-             << "\n\t\t |     |     |     | "
-             << "\n\t\t |  " << arr1[3] << "  |  " << arr1[4] << "  |  " << arr1[5] << "  | "
-             << "\n\t\t |____4|____5|____6| "
-             << "\n\t\t |     |     |     | "
-             << "\n\t\t |  " << arr1[6] << "  |  " << arr1[7] << "  |  " << arr1[8] << "  | "
-             << "\n\t\t |____7|____8|____9| ";
+		DisplayMatrix(arr1); 
         
         flag = CheckWinner(ProgressCheck(arr1), 2); // 2 reperesents Player 2
         
@@ -251,7 +255,8 @@ int StartGame()
     
     else if (a == 'N' || a == 'n')
     {
-        system("clear");
+        // system("clear");
+		ClearOS();
         
         cout << "\n\n The Game Begins........... NOW!! \n\n";
         TicTacToe(p1, p2);
@@ -268,6 +273,8 @@ int StartGame()
 
 int main()
 {
+	ClearOS();
+	
     START:
     
     int n;
@@ -281,7 +288,9 @@ int main()
     {
         case 1:
         {
-            system("clear");
+            // system("clear");
+			ClearOS();
+			
             StartGame();
             goto START;
         }
